@@ -86,8 +86,8 @@
 		0ABA78DF24FAC8CF005E8A2C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0ABA78CE24FAC7CD005E8A2C /* ContentView.swift */,
 				0ABA78D524FAC7CE005E8A2C /* LaunchScreen.storyboard */,
+				0ABA78CE24FAC7CD005E8A2C /* ContentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

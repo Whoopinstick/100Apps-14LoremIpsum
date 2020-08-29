@@ -9,10 +9,50 @@
 import SwiftUI
 
 struct ContentView: View {
-    let displayChoices = ["Paragraphs","Words"]
+    let loremIpsumText: String = Bundle.main.decode()
+    let displayChoices = ["Paragraphs","Sentences","Words"]
     @State private var displaySelection = 0
-    @State private var paragraphCount = 0
-    @State private var wordCount = 0
+    @State private var paragraphCount = 1
+    @State private var sentenceCount = 1
+    @State private var wordCount = 1
+    var loremIpsumDisplay: String {
+        //paragraphs
+        if displaySelection == 0 {
+            let paragraphs = loremIpsumText.components(separatedBy: "\n")
+            var returnValue = ""
+            var counter = 0
+            while counter < paragraphCount {
+                returnValue += paragraphs[counter]
+                returnValue += "\n"
+                returnValue += "\n"
+                counter += 1
+            }
+            return returnValue
+        //sentences
+        } else if displaySelection == 1 {
+            let sentences = loremIpsumText.components(separatedBy: ". ")
+            var returnValue = ""
+            var counter = 0
+            while counter < sentenceCount {
+                returnValue += sentences[counter]
+                returnValue += ". "
+                counter += 1
+            }
+            return returnValue
+        //words
+        } else {
+            let words = loremIpsumText.components(separatedBy: " ")
+            var returnValue = ""
+            var counter = 0
+            while counter < wordCount {
+                returnValue += words[counter]
+                returnValue += " "
+                counter += 1
+            }
+            return returnValue
+        }
+        
+    }
     
     var body: some View {
         NavigationView {
@@ -27,15 +67,17 @@ struct ContentView: View {
                     .padding(.bottom)
                     
                     if displaySelection == 0 {
-                        Stepper("\(paragraphCount) Paragraph(s)", value: $paragraphCount, in: 0...5)
-                        .padding(.bottom)
+                        Stepper("\(paragraphCount) Paragraph(s)", value: $paragraphCount, in: 1...5)
+                            .padding(.bottom)
+                    } else if displaySelection == 1{
+                        Stepper("\(sentenceCount) Sentence(s)", value: $sentenceCount, in: 1...10)
+                            .padding(.bottom)
                     } else {
-                        Stepper("\(wordCount) Word(s)", value: $wordCount, in: 0...5)
-                        .padding(.bottom)
+                        Stepper("\(wordCount) Word(s)", value: $wordCount, in: 1...85)
+                            .padding(.bottom)
                     }
                     
-                    
-                    Text("The lorem ipsum text goes here")
+                    Text("\(loremIpsumDisplay)")
                 }
                 .padding()
             }

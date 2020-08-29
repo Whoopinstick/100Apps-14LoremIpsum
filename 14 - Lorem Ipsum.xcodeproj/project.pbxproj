@@ -56,12 +56,11 @@
 		0ABA78C924FAC7CD005E8A2C /* 14 - Lorem Ipsum */ = {
 			isa = PBXGroup;
 			children = (
-				0ABA78CA24FAC7CD005E8A2C /* AppDelegate.swift */,
-				0ABA78CC24FAC7CD005E8A2C /* SceneDelegate.swift */,
-				0ABA78CE24FAC7CD005E8A2C /* ContentView.swift */,
 				0ABA78D024FAC7CE005E8A2C /* Assets.xcassets */,
-				0ABA78D524FAC7CE005E8A2C /* LaunchScreen.storyboard */,
 				0ABA78D824FAC7CE005E8A2C /* Info.plist */,
+				0ABA78DE24FAC8C3005E8A2C /* Delegate */,
+				0ABA78E024FAC8DA005E8A2C /* Model */,
+				0ABA78DF24FAC8CF005E8A2C /* View */,
 				0ABA78D224FAC7CE005E8A2C /* Preview Content */,
 			);
 			path = "14 - Lorem Ipsum";
@@ -73,6 +72,31 @@
 				0ABA78D324FAC7CE005E8A2C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0ABA78DE24FAC8C3005E8A2C /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				0ABA78CA24FAC7CD005E8A2C /* AppDelegate.swift */,
+				0ABA78CC24FAC7CD005E8A2C /* SceneDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		0ABA78DF24FAC8CF005E8A2C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0ABA78CE24FAC7CD005E8A2C /* ContentView.swift */,
+				0ABA78D524FAC7CE005E8A2C /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0ABA78E024FAC8DA005E8A2C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

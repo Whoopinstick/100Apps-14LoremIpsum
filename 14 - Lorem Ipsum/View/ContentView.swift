@@ -67,13 +67,13 @@ struct ContentView: View {
                     .padding(.bottom)
                     
                     if displaySelection == 0 {
-                        Stepper("\(paragraphCount) Paragraph(s)", value: $paragraphCount, in: 1...5)
+                        Stepper(paragraphCount == 1 ? "\(paragraphCount) Paragraph" : "\(paragraphCount) Paragraphs", value: $paragraphCount, in: 1...5)
                             .padding(.bottom)
                     } else if displaySelection == 1{
-                        Stepper("\(sentenceCount) Sentence(s)", value: $sentenceCount, in: 1...10)
+                        Stepper(sentenceCount == 1 ? "\(sentenceCount) Sentence" : "\(sentenceCount) Sentences", value: $sentenceCount, in: 1...10)
                             .padding(.bottom)
                     } else {
-                        Stepper("\(wordCount) Word(s)", value: $wordCount, in: 1...85)
+                        Stepper(wordCount == 1 ? "\(wordCount) Word" : "\(wordCount) Words", value: $wordCount, in: 1...85)
                             .padding(.bottom)
                     }
                     
